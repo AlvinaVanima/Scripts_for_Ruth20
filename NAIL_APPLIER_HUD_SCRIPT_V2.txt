@@ -1,7 +1,8 @@
-//NAILS APPLIER
+//SKIN APPLIER
 
 integer APPKEY = 987654321; // Application key, needed later. Change as you see fit, but remain consistent!
 integer CH;                 // Communication channel
+integer n;                  // Used as a counter
 
 // Routine to use the owner's UUID as the basis for a channel number. Uses the above APPKEY.
 integer Key2AppChan(key ID, integer App) {
@@ -12,6 +13,13 @@ string keyword="Applier"; // Keyword to prefix the command string with.
 
 key tex_finger_nails;   // UUID of the finger nails texture
 key tex_toe_nails;      // UUID of the toe nails texture
+
+// User function to find which part a texture is for. REQUIRES PART NAME IN THE TEXTURE'S NAME!
+integer part(string texture, string test)
+{
+    integer index = llSubStringIndex(llToLower(texture),llToLower(test));    
+    return index;
+}
 
 default
 {
@@ -26,14 +34,13 @@ touch_start(integer num)
         
         for(n=0;n<num_tex;++n)
         {
-            string tex_name = llToLower(llGetInventoryName(INVENTORY_TEXTURE, n));
-            llOwnerSay("Texture #"+n+" = "+tex_name);
+            string tex_name = llGetInventoryName(INVENTORY_TEXTURE, n);
             
             if(part(tex_name, "finger") > 0 ) {
                 tex_finger_nails=llGetInventoryKey(tex_name);
             }
             if(part(tex_name, "toe") > 0 )  {
-                tex_head=llGetInventoryKey(tex_name);
+                tex_toe_nails=llGetInventoryKey(tex_name);
             }
         }
         
