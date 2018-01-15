@@ -8,11 +8,10 @@ HOW TO USE THE FILES IN THIS FOLDER.
 
 WHAT'S THE DIFFERENCE BETWEEN THE V1 SCRIPTS AND THE V2 SCRIPTS?
 
-The V1 scripts depend on the user entering the UUID of the texture in the script. This is potentially interesting to merchants who can then make the script no copy so that it can not be read by the next owner.
+The V1 scripts depend on the user entering the UUID of the texture in the script. This is potentially interesting to merchants who may choose to make the script no copy so that it can not be read by the next owner.
 PROs:   - Guaranteed to work in the same grid.
         - Can be used for commercial appliers.
 CONS    - Will not work when taken to a different grid
-        - Not truly open
         - Requires the creator to edit the script
 
 The V2 script reads the UUIDs of the textures in the applier prim, and then applies the texture.
@@ -24,40 +23,26 @@ CONS:   - Requires the textures to be provided together with the script
 
 
 
+TEXTURE REQUIREMENTS FOR V2 SCRIPTS
 
+The script looks for certain keywords in the texture's name in order to determine to which part it should be applied. These keywords are NOT case sensitive. 
+Per part one of the keywords MUST be present in the name. Ex. BonnieFaceFreckles or Sarah_Full_Lower.
+In case a skin name could cause the script to be confuused. like "flower upper dark" because "flower" contains the word "lower", you should prepend the part name to the name, ex. "upper flower dark".
 
+Keywords for skins appliers:
 
+Head
+- Head
+- Face
 
+Upper body
+- Upper
+- Torso
 
+Lower body
+- Lower
+- Legs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Keywords for nails appliers:
+- Finger
+- Toe
