@@ -1,0 +1,63 @@
+HOW TO USE THE FILES IN THIS FOLDER.
+
+1 - Create a new script in your viewer and delete its contents.
+2 - Copy the contents of the textfile of your choice
+3 - Paste into the script in your viewer and save
+4 - The script is now ready to use.
+
+
+WHAT'S THE DIFFERENCE BETWEEN THE V1 SCRIPTS AND THE V2 SCRIPTS?
+
+The V1 scripts depend on the user entering the UUID of the texture in the script. This is potentially interesting to merchants who can then make the script no copy so that it can not be read by the next owner.
+PROs:   - Guaranteed to work in the same grid.
+        - Can be used for commercial appliers.
+CONS    - Will not work when taken to a different grid
+        - Not truly open
+        - Requires the creator to edit the script
+
+The V2 script reads the UUIDs of the textures in the applier prim, and then applies the texture.
+PROS:   - Guaranteed to work across grids
+        - Does not require editing a script
+CONS:   - Requires the textures to be provided together with the script
+        - Textures need full permissions to work
+        - Some textures may not work in spite of full permissions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

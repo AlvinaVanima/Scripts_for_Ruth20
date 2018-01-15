@@ -1,0 +1,65 @@
+//SKIN APPLIER
+
+integer APPKEY = 987654321; // Application key, needed later. Change as you see fit, but remain consistent!
+integer CH;                 // Communication channel
+integer n;                  // Used as a counter
+
+// Routine to use the owner's UUID as the basis for a channel number. Uses the above APPKEY.
+integer Key2AppChan(key ID, integer App) {
+    return 0x80000000 | ((integer)("0x"+(string)ID) ^ App);
+}
+
+string keyword="Applier"; // Keyword to prefix the command string with.
+
+key tex_head;   // UUID of the head texture
+key tex_upper;  // UUID of the upper body texture
+key tex_lower;  // UUID of the lower body texture
+
+// User function to find which part a texture is for. REQUIRES PART NAME IN THE TEXTURE'S NAME!
+integer part(string texture, string test)
+{
+    integer index = llSubStringIndex(llToLower(texture),llToLower(test));    
+    return index;
+}
+
+default
+{
+    state_entry()
+    {
+        CH = Key2AppChan(llGetOwner(), APPKEY);     // Set the communication channel, based on owner UUID and the APPKEY
+    }
+    
+    touch_start(integer num)
+    {
+        integer num_tex = llGetInventoryNumber(INVENTORY_TEXTURE);
+        
+        for(n=0;n<num_tex;++n)
+        {
+            string tex_name = llGetInventoryName(INVENTORY_TEXTURE, n);
+            llOwnerSay("Texture #"+n+" = "+tex_name);
+            
+            if(part(tex_name, "head") > 0 ) {
+                tex_head=llGetInventoryKey(tex_name);
+            }
+            if(part(tex_name, "hace") > 0 )  {
+                tex_head=llGetInventoryKey(tex_name);
+            }
+            if(part(tex_name, "upper") > 0 )  {
+                tex_upper=llGetInventoryKey(tex_name);
+            }
+            if(part(tex_name, "torso") > 0 )  {
+                tex_upper=llGetInventoryKey(tex_name);
+            }
+            if(part(tex_name, "lower") > 0 )  {
+                tex_lower=llGetInventoryKey(tex_name);
+            }
+            if(part(tex_name, "legs") > 0 )  {
+                tex_lower=llGetInventoryKey(tex_name);
+            }
+        }
+        
+        llSay(CH,keyword+"%head_" +tex_head);
+        llSay(CH,keyword+"%upper_"+tex_upper);
+        llSay(CH,keyword+"%lower_"+tex_lower);        
+    }
+}
