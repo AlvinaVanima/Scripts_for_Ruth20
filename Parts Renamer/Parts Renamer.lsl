@@ -25,6 +25,7 @@
 //
 // VERSION HISTORY
 // ---------------
+// Version 1.1.1 Bugfix. "Finished" message was sent after each part was renamed.
 // Version 1.1 Bugfix. Left/right breast and left/right legs were swapped
 // Version 1.0 Initial release
 
@@ -58,9 +59,8 @@ default
                     llSetLinkPrimitiveParamsFast(n, [PRIM_NAME, llList2String(newname, index), PRIM_DESC, llList2String(description,index)]); // Rename the prim and set the proper description for that prim.
                 }
             }
-            
-            llOwnerSay("Renaming finished. You may now delete the renaming script, or click on various parts to verify that they have the correct name");
         }
+        llOwnerSay("Renaming finished. You may now delete the renaming script, or click on various parts to verify that they have the correct name");
     }
     
     touch_start(integer num)
