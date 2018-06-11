@@ -21,14 +21,18 @@
 // This script is NOT guaranteed to work with any previous or subsequent releases or version of the Ruth 2.0 mesh body. 
 // As always, WORK ON A COPY and keep a pristine copy of the body as a backup, in case something goes wrong.
 // Good luck and enjoy your Ruth 2.0 body!
-
+//
+// VERSION HISTORY
+// ---------------
+// Version 1.1 Bugfix. Left/right breast and left/right legs were swapped
+// Version 1.0 Inisial release
 
 integer numprims;
 integer n;
 
 list orgname = ["r2BODY_UpperLower_ada1.9", "r2BODY_UpperLower_ada1.9#1", "r2BODY_UpperLower_ada1.9#2", "r2BODY_UpperLower_ada1.9#3", "r2BODY_UpperLower_ada1.9#4", "r2BODY_UpperLower_ada1.9#5", "r2BODY_UpperLower_ada1.9#6", "r2BODY_UpperLower_ada1.9#7", "r2BODY_UpperLower_ada1.9#8", "r2BODY_UpperLower_ada1.9#9", "r2BODY_UpperLower_ada1.9#10", "r2BODY_UpperLower_ada1.9#11", "r2BODY_UpperLower_ada1.9#12", "r2BODY_UpperLower_ada1.9#13", "r2BODY_UpperLower_ada1.9#14", "r2BODY_UpperLower_ada1.9#15", "r2BODY_UpperLower_ada1.9#16", "r2BODY_UpperLower_ada1.9#17", "r2BODY_UpperLower_ada1.9#18", "r2BODY_UpperLower_ada1.9#19", "r2BODY_UpperLower_ada1.9#20", "r2BODY_UpperLower_ada1.9#21", "r2BODY_UpperLower_ada1.9#22", "r2BODY_UpperLower_ada1.9#23", "r2BODY_UpperLower_ada1.9#24", "r2BODY_UpperLower_ada1.9#25"];
 
-list newname = ["legright7", "legright2", "legright8", "legright6", "legright3", "legright5", "legleft1", "legleft2", "legleft3", "legleft4", "legleft5", "legright4", "legleft6", "legleft7", "legleft8", "pelvisfront", "pelvisback", "armleft", "chest", "breastleft", "armright", "belly", "breastright", "backupper", "backlower", "legright1"];
+list newname = ["legleft7", "legleft2", "legleft8", "legleft6", "legleft3", "legleft5", "legright1", "legright2", "legright3", "legright4", "legright5", "legleft4", "legright6", "legright7", "legright8", "pelvisfront", "pelvisback", "armleft", "chest", "breastright", "armright", "belly", "breastleft", "backupper", "backlower", "legleft1"];
 
 list description = ["lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "lower", "upper", "upper", "upper", "upper", "upper", "upper", "upper", "upper", "lower"];
 
